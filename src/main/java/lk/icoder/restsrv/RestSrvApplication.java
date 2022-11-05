@@ -2,12 +2,18 @@ package lk.icoder.restsrv;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class RestSrvApplication {
+public class RestSrvApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(RestSrvApplication.class, args);
     }
 
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(RestSrvApplication.class);
+    }
 }
